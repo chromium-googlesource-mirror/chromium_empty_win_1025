@@ -1,0 +1,105 @@
+vars = {
+  # Use this googlecode_url variable only if there is an internal mirror for it.
+  # If you do not know, use the full path while defining your new deps entry.
+  "googlecode_url": "https://github.com/chromium-googlesource-mirror/%s",
+  "sourceforge_url": "https://github.com/chromium-googlesource-mirror/%(repo)s",
+  "webkit_trunk": "http://svn.webkit.org/repository/webkit/trunk",
+  "nacl_trunk": "https://src.chromium.org/native_client/trunk",
+  "webkit_revision": "103792",
+  "chromium_git": "http://git.chromium.org/git",
+  "chromium_svn": "https://github.com/chromium-googlesource-mirror",
+  "swig_revision": "69281",
+  "nacl_revision": "7483",
+  # After changing nacl_revision, run 'glient sync' and check native_client/DEPS
+  # to update other nacl_*_revision's.
+  "nacl_tools_revision": "7139",  # native_client/DEPS: tools_rev
+
+  # These hashes need to be updated when nacl_toolchain_revision is changed.
+  # After changing nacl_toolchain_revision, run 'gclient runhooks' to get the
+  # new values.
+  "nacl_toolchain_linux_x86_hash":
+      "bfd8e84a65837c3bbfb0c6a1d49635dea13dfaaa",
+  "nacl_toolchain_linux_x86_newlib_hash":
+      "a0d20193184fdddd70c5f64d44eaa7b83fe670b2",
+  "nacl_toolchain_mac_x86_hash":
+      "fc6863da2221038fc6e1d4abb27c62e87b1a53ca",
+  "nacl_toolchain_mac_x86_newlib_hash":
+      "64ea6074283f3c0d43d80145d7868ca84ec8586d",
+  "nacl_toolchain_win_x86_hash":
+      "1e81299eef3e6f60c64b9826bd5ab664355d50d7",
+  "nacl_toolchain_win_x86_newlib_hash":
+      "3a4f5ad6c387cf02ca3058a3a2b79016cc561998",
+  "nacl_toolchain_revision": "7460",
+
+  "libjingle_revision": "100",
+  "libphonenumber_revision": "407",
+  "libvpx_revision": "109236",
+  "lss_revision": "9",
+  "ffmpeg_revision": "112050",
+  "sfntly_revision": "118",
+  "skia_revision": "2922",
+  # Three lines of non-changing comments so that
+  # the commit queue can handle CLs rolling Skia
+  # and V8 without interference from each other.
+  "v8_revision": "10304",
+  "webrtc_revision": "1264",
+  "jsoncpp_revision": "247",
+}
+
+deps = {
+    # Linux, really.
+
+    "src/third_party/xdg-utils":
+      Var("chromium_svn") + "/xdg-utils/trunk@93299",
+
+    "src/third_party/swig/linux":
+      Var("chromium_svn") + "/linux/trunk@" + Var("swig_revision"),
+
+    "src/third_party/lss":
+      Var("chromium_svn") + "/lss/trunk@" + Var("lss_revision"),
+
+    "src/third_party/openssl":
+      Var("chromium_svn") + "/openssl/trunk@105093",
+
+    "src/third_party/WebKit/Tools/gdb":
+      Var("webkit_trunk") + "/Tools/gdb@" + Var("webkit_revision"),
+}
+
+
+deps_os = {
+  "win": {
+  },
+  "mac": {
+  },
+  "unix": {
+  },
+}
+
+
+include_rules = [
+  # Everybody can use some things.
+  "+base",
+  "+build",
+  "+ipc",
+
+  # For now, we allow ICU to be included by specifying "unicode/...", although
+  # this should probably change.
+  "+unicode",
+  "+testing",
+]
+
+
+# checkdeps.py shouldn't check include paths for files in these dirs:
+skip_child_includes = [
+  "breakpad",
+  "chrome_frame",
+  "native_client",
+  "native_client_sdk",
+  "o3d",
+  "pdf",
+  "sdch",
+  "skia",
+  "testing",
+  "third_party",
+  "v8",
+]
