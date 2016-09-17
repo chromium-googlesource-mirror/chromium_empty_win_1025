@@ -47,22 +47,55 @@ vars = {
 }
 
 deps = {
-    # Linux, really.
+    "src/third_party/cygwin":
+      Var("chromium_svn") + "/trunk/deps/third_party/cygwin@66844",
 
-    "src/third_party/xdg-utils":
-      Var("chromium_svn") + "/xdg-utils/trunk@93299",
+    "src/third_party/python_26":
+      Var("chromium_svn") + "/trunk/tools/third_party/python_26@89111",
 
-    "src/third_party/swig/linux":
-      Var("chromium_svn") + "/linux/trunk@" + Var("swig_revision"),
+    "src/third_party/psyco_win32":
+      Var("chromium_svn") + "/trunk/deps/third_party/psyco_win32@79861",
 
-    "src/third_party/lss":
-      Var("chromium_svn") + "/lss/trunk@" + Var("lss_revision"),
+    "src/third_party/lighttpd":
+      Var("chromium_svn") + "/trunk/deps/third_party/lighttpd@33727",
 
-    "src/third_party/openssl":
-      Var("chromium_svn") + "/openssl/trunk@105093",
+    "src/third_party/ffmpeg/binaries/chromium/win/ia32":
+      Var("chromium_svn") + "/trunk/deps/third_party/ffmpeg/binaries/win@" + Var("ffmpeg_revision"),
 
-    "src/third_party/WebKit/Tools/gdb":
-      Var("webkit_trunk") + "/Tools/gdb@" + Var("webkit_revision"),
+    # Chrome Frame related deps
+    "src/third_party/xulrunner-sdk":
+      Var("chromium_svn") + "/trunk/deps/third_party/xulrunner-sdk@71609",
+
+    # Parses Windows PE/COFF executable format.
+    "src/third_party/pefile":
+      (Var("googlecode_url") % "pefile") + "/trunk@63",
+
+    # NSS, for SSLClientSocketNSS.
+    "src/third_party/nss":
+      Var("chromium_svn") + "/trunk/deps/third_party/nss@115445",
+
+    "src/third_party/swig/win":
+      Var("chromium_svn") + "/trunk/deps/third_party/swig/win@" + Var("swig_revision"),
+
+    "src/third_party/mingw-w64/mingw/bin":
+      (Var("nacl_trunk") + "/deps/third_party/mingw-w64/mingw/bin@" +
+       Var("nacl_tools_revision")),
+
+    "src/rlz":
+      (Var("googlecode_url") % "rlz") + "/trunk@49",
+
+    # Dependencies used by libjpeg-turbo
+    "src/third_party/yasm/binaries":
+      Var("chromium_svn") + "/trunk/deps/third_party/yasm/binaries@74228",
+
+    # Binary level profile guided optimizations. This points to the
+    # latest release binaries for the toolchain.
+    "src/third_party/syzygy/binaries":
+      (Var("googlecode_url") % "sawbuck") + "/trunk/syzygy/binaries@543",
+
+    # Binaries for nacl sdk.
+    "src/third_party/nacl_sdk_binaries":
+      Var("chromium_svn") + "/trunk/deps/third_party/nacl_sdk_binaries@111576",
 }
 
 
