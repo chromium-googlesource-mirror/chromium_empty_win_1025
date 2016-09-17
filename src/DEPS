@@ -48,23 +48,23 @@ vars = {
 
 deps = {
     "src/third_party/cygwin":
-      Var("chromium_svn") + "/trunk/deps/third_party/cygwin@66844",
+      Var("chromium_svn") + "/cygwin/trunk@66844",
 
     "src/third_party/python_26":
-      Var("chromium_svn") + "/trunk/tools/third_party/python_26@89111",
+      Var("chromium_svn") + "/python_26/trunk@89111",
 
     "src/third_party/psyco_win32":
-      Var("chromium_svn") + "/trunk/deps/third_party/psyco_win32@79861",
+      Var("chromium_svn") + "/psyco_win32/trunk@79861",
 
     "src/third_party/lighttpd":
-      Var("chromium_svn") + "/trunk/deps/third_party/lighttpd@33727",
+      Var("chromium_svn") + "/lighttpd_33727/trunk@33727",
 
     "src/third_party/ffmpeg/binaries/chromium/win/ia32":
-      Var("chromium_svn") + "/trunk/deps/third_party/ffmpeg/binaries/win@" + Var("ffmpeg_revision"),
+      Var("chromium_svn") + "/ffmpeg_binaries_win/trunk@" + Var("ffmpeg_revision"),
 
     # Chrome Frame related deps
     "src/third_party/xulrunner-sdk":
-      Var("chromium_svn") + "/trunk/deps/third_party/xulrunner-sdk@71609",
+      Var("chromium_svn") + "/xulrunner-sdk/trunk@71609",
 
     # Parses Windows PE/COFF executable format.
     "src/third_party/pefile":
@@ -75,10 +75,10 @@ deps = {
       Var("chromium_svn") + "/trunk/deps/third_party/nss@115445",
 
     "src/third_party/swig/win":
-      Var("chromium_svn") + "/trunk/deps/third_party/swig/win@" + Var("swig_revision"),
+      Var("chromium_svn") + "/win/trunk@" + Var("swig_revision"),
 
     "src/third_party/mingw-w64/mingw/bin":
-      (Var("nacl_trunk") + "/deps/third_party/mingw-w64/mingw/bin@" +
+      (Var("nacl_trunk") + "/mingw-w64_mingw_bin/trunk@" +
        Var("nacl_tools_revision")),
 
     "src/rlz":
@@ -86,7 +86,7 @@ deps = {
 
     # Dependencies used by libjpeg-turbo
     "src/third_party/yasm/binaries":
-      Var("chromium_svn") + "/trunk/deps/third_party/yasm/binaries@74228",
+      Var("chromium_svn") + "/yasm_binaries/trunk@74228",
 
     # Binary level profile guided optimizations. This points to the
     # latest release binaries for the toolchain.
@@ -95,7 +95,7 @@ deps = {
 
     # Binaries for nacl sdk.
     "src/third_party/nacl_sdk_binaries":
-      Var("chromium_svn") + "/trunk/deps/third_party/nacl_sdk_binaries@111576",
+      Var("chromium_svn") + "/nacl_sdk_binaries/trunk@111576",
 }
 
 
