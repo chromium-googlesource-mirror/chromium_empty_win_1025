@@ -4,7 +4,7 @@ vars = {
   "googlecode_url": "https://github.com/chromium-googlesource-mirror/%s",
   "sourceforge_url": "https://github.com/chromium-googlesource-mirror/%(repo)s",
   "webkit_trunk": "http://svn.webkit.org/repository/webkit/trunk",
-  "nacl_trunk": "https://src.chromium.org/native_client/trunk",
+  "nacl_trunk": "https://github.com/chromium-googlesource-mirror/mingw-w64_mingw_bin/trunk",
   "webkit_revision": "103792",
   "chromium_git": "http://git.chromium.org/git",
   "chromium_svn": "https://github.com/chromium-googlesource-mirror",
@@ -78,7 +78,7 @@ deps = {
       Var("chromium_svn") + "/win/trunk@" + Var("swig_revision"),
 
     "src/third_party/mingw-w64/mingw/bin":
-      (Var("nacl_trunk") + "/mingw-w64_mingw_bin/trunk@" +
+      (Var("nacl_trunk") + "@" +
        Var("nacl_tools_revision")),
 
     "src/rlz":
