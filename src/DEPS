@@ -72,7 +72,7 @@ deps = {
 
     # NSS, for SSLClientSocketNSS.
     "src/third_party/nss":
-      Var("chromium_svn") + "/trunk/deps/third_party/nss@115445",
+      Var("chromium_svn") + "/nss/trunk@115445",
 
     "src/third_party/swig/win":
       Var("chromium_svn") + "/win/trunk@" + Var("swig_revision"),
