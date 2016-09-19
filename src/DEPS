@@ -64,7 +64,7 @@ deps = {
 
     # Chrome Frame related deps
     "src/third_party/xulrunner-sdk":
-      Var("chromium_svn") + "/xulrunner-sdk/trunk@71609",
+      Var("chromium_svn") + "/xulrunner-sdk_119756/trunk@119756",
 
     # Parses Windows PE/COFF executable format.
     "src/third_party/pefile":
@@ -72,7 +72,7 @@ deps = {
 
     # NSS, for SSLClientSocketNSS.
     "src/third_party/nss":
-      Var("chromium_svn") + "/nss/trunk@115445",
+      Var("chromium_svn") + "/nss_117974/trunk@117974",
 
     "src/third_party/swig/win":
       Var("chromium_svn") + "/win/trunk@" + Var("swig_revision"),
@@ -91,7 +91,7 @@ deps = {
     # Binary level profile guided optimizations. This points to the
     # latest release binaries for the toolchain.
     "src/third_party/syzygy/binaries":
-      (Var("googlecode_url") % "sawbuck") + "/trunk/syzygy/binaries@543",
+      (Var("googlecode_url") % "sawbuck_596") + "/trunk/syzygy/binaries@596",
 
     # Binaries for nacl sdk.
     "src/third_party/nacl_sdk_binaries":
